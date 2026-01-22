@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Banking | Sodetso Banking Technology</title>
+    <link rel="stylesheet" href="/cssfiles/style.css">
+    <link rel="stylesheet" href="/cssfiles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Modern Enhancements -->
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(45deg, #6a11cb, #2575fc);
+            --secondary-gradient: linear-gradient(45deg, #2ecc71, #1abc9c);
+            --accent-gradient: linear-gradient(45deg, #e74c3c, #e67e22);
+            --purple-gradient: linear-gradient(45deg, #9b59b6, #34495e);
+            --dark-bg: #2c3e50;
+            --light-bg: #f8f9fa;
+            --ios-gradient: linear-gradient(45deg, #000000, #333333);
+            --android-gradient: linear-gradient(45deg, #3ddc84, #0d904f);
+            --web-gradient: linear-gradient(45deg, #4285f4, #34a853);
+        }
+        
+        .animated-gradient {
+            background: linear-gradient(-45deg, #6a11cb, #2575fc, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .modern-section {
+            padding: 100px 0;
+        }
+        
+        .section-title-modern {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 0;
+        }
+        
+        .btn-gradient span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-gradient i {
+            margin-right: 8px;
+        }
+        
+        .modern-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .mobile-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .mobile-feature {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .mobile-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-gradient);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-feature:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .mobile-feature h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .mobile-feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .platform-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .platform-modern {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+        
+        .platform-modern.ios::before {
+            background: var(--ios-gradient);
+        }
+        
+        .platform-modern.android::before {
+            background: var(--android-gradient);
+        }
+        
+        .platform-modern.web::before {
+            background: var(--web-gradient);
+        }
+        
+        .platform-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .platform-modern i {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .platform-modern:hover i {
+            transform: scale(1.1);
+        }
+        
+        .platform-modern h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .platform-modern p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        .platform-modern span {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .security-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .security-item-modern {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .security-item-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .security-item-modern i {
+            font-size: 3rem;
+            color: #2ecc71;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .security-item-modern:hover i {
+            transform: scale(1.1);
+        }
+        
+        .security-item-modern h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-features-grid,
+            .platform-grid-modern,
+            .security-grid-modern {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Modern Solution Header -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div>
+                    <span style="color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 15px;">MOBILE BANKING</span>
+                    <h1 style="font-size: 3.5rem; color: #2c3e50; margin-bottom: 20px; font-weight: 800; line-height: 1.2;">Advanced Mobile Banking Platform</h1>
+                    <p style="font-size: 1.2rem; color: #666; line-height: 1.7; margin-bottom: 30px;">
+                        Native mobile banking apps for iOS and Android with cutting-edge features, biometric authentication, and enterprise-grade security.
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-gradient" style="background: var(--secondary-gradient);">
+                            <i class="fas fa-calendar-check"></i> <span>Request Demo</span>
+                        </a>
+                        <a href="#features" class="btn-gradient" style="background: transparent; border: 2px solid #2ecc71; color: #2ecc71;">
+                            <i class="fas fa-list"></i> <span>View Features</span>
+                        </a>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <div style="background: var(--secondary-gradient); padding: 50px; border-radius: 25px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-mobile-alt" style="font-size: 100px; margin-bottom: 20px;"></i>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Mobile Banking</h3>
+                            <p style="opacity: 0.9;">Secure, intuitive, feature-rich</p>
+                        </div>
+                    </div>
+                    <!-- Floating Device Mockups -->
+                    <div style="position: absolute; top: 20px; right: -30px; width: 150px; height: 300px; background: #2c3e50; border-radius: 25px; border: 5px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transform: rotate(5deg);"></div>
+                    <div style="position: absolute; bottom: 20px; left: -30px; width: 150px; height: 300px; background: #2c3e50; border-radius: 25px; border: 5px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transform: rotate(-5deg);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern App Features -->
+    <section class="modern-section" id="features">
+        <div class="container">
+            <h2 class="section-title-modern">App Features</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Comprehensive features designed to provide the best mobile banking experience for your customers
+            </p>
+            
+            <div class="mobile-features-grid">
+                <div class="mobile-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Biometric Authentication</h3>
+                    <p>Face ID, Touch ID, and fingerprint login for secure and convenient access to banking services.</p>
+                </div>
+                
+                <div class="mobile-feature">
+                    <div class="feature-icon" style="background: var(--primary-gradient);">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>QR Code Payments</h3>
+                    <p>Scan to pay, receive payments, and generate payment requests using secure QR codes.</p>
+                </div>
+                
+                <div class="mobile-feature">
+                    <div class="feature-icon" style="background: var(--accent-gradient);">
+                        <i class="fas fa-bill"></i>
+                    </div>
+                    <h3>Bill Payments</h3>
+                    <p>Pay utility bills, school fees, taxes, and other services directly from the app.</p>
+                </div>
+                
+                <div class="mobile-feature">
+                    <div class="feature-icon" style="background: var(--purple-gradient);">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Money Transfers</h3>
+                    <p>Send money instantly to bank accounts, mobile wallets, and contacts with real-time notifications.</p>
+                </div>
+                
+                <div class="mobile-feature">
+                    <div class="feature-icon" style="background: linear-gradient(45deg, #3498db, #2980b9);">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Financial Insights</h3>
+                    <p>Advanced spending analytics, budgeting tools, and personalized financial recommendations.</p>
+                </div>
+                
+                <div class="mobile-feature">
+                    <div class="feature-icon" style="background: linear-gradient(45deg, #9b59b6, #8e44ad);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Chatbot</h3>
+                    <p>24/7 customer support through intelligent chatbot for instant assistance and queries.</p>
+                </div>
+                
+                <div class="mobile-feature">
+                    <div class="feature-icon" style="background: linear-gradient(45deg, #e67e22, #d35400);">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Smart Notifications</h3>
+                    <p>Personalized alerts for transactions, account activity, and financial tips.</p>
+                </div>
+                
+                <div class="mobile-feature">
+                    <div class="feature-icon" style="background: linear-gradient(45deg, #1abc9c, #16a085);">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Digital Wallet</h3>
+                    <p>Store payment cards, loyalty cards, and manage multiple accounts in one secure place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Platform Support -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">Platform Support</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Native applications built for all major platforms with consistent user experience
+            </p>
+            
+            <div class="platform-grid-modern">
+                <div class="platform-modern ios">
+                    <i class="fab fa-apple" style="color: #000;"></i>
+                    <h3>iOS</h3>
+                    <p>Native Swift application optimized for iPhone and iPad</p>
+                    <span>iOS 13+ Supported</span>
+                    <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Face ID & Touch ID</p>
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Apple Pay Integration</p>
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Dark Mode Support</p>
+                    </div>
+                </div>
+                
+                <div class="platform-modern android">
+                    <i class="fab fa-android" style="color: #3ddc84;"></i>
+                    <h3>Android</h3>
+                    <p>Native Kotlin application for Android smartphones and tablets</p>
+                    <span>Android 8.0+ Supported</span>
+                    <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Fingerprint & Face Unlock</p>
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Google Pay Integration</p>
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Material Design</p>
+                    </div>
+                </div>
+                
+                <div class="platform-modern web">
+                    <i class="fas fa-globe" style="color: #4285f4;"></i>
+                    <h3>Progressive Web App</h3>
+                    <p>Responsive web application accessible from any modern browser</p>
+                    <span>All Modern Browsers</span>
+                    <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Installable on Home Screen</p>
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Offline Functionality</p>
+                        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Push Notifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Security Features -->
+    <section class="modern-section">
+        <div class="container">
+            <h2 class="section-title-modern">Security Features</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Enterprise-grade security measures to protect your customers and their transactions
+            </p>
+            
+            <div class="security-grid-modern">
+                <div class="security-item-modern">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>End-to-End Encryption</h3>
+                    <p style="color: #666;">All data encrypted in transit and at rest using AES-256 encryption.</p>
+                </div>
+                
+                <div class="security-item-modern">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Device Binding</h3>
+                    <p style="color: #666;">Application tied to specific devices for enhanced security and fraud prevention.</p>
+                </div>
+                
+                <div class="security-item-modern">
+                    <i class="fas fa-bell"></i>
+                    <h3>Real-time Alerts</h3>
+                    <p style="color: #666;">Instant push notifications for all account activities and transactions.</p>
+                </div>
+                
+                <div class="security-item-modern">
+                    <i class="fas fa-ban"></i>
+                    <h3>Remote Lock/Unlock</h3>
+                    <p style="color: #666;">Administrators can remotely lock or unlock user accounts for security management.</p>
+                </div>
+                
+                <div class="security-item-modern">
+                    <i class="fas fa-eye-slash"></i>
+                    <h3>Session Management</h3>
+                    <p style="color: #666;">Automatic session timeout and secure token-based authentication.</p>
+                </div>
+                
+                <div class="security-item-modern">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Multi-factor Authentication</h3>
+                    <p style="color: #666;">Multiple layers of authentication including OTP, biometrics, and security questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Process -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">Implementation Timeline</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Get your custom-branded mobile banking app in record time with our streamlined process
+            </p>
+            
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; position: relative;">
+                <!-- Timeline line -->
+                <div style="position: absolute; top: 50px; left: 0; right: 0; height: 3px; background: var(--secondary-gradient); z-index: 1;"></div>
+                
+                <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; color: #2c3e50;">1</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;">Requirement Analysis</h3>
+                    <p style="color: #666; font-size: 0.95rem;">2-3 Weeks</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; color: #2c3e50;">2</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;">Design & Prototyping</h3>
+                    <p style="color: #666; font-size: 0.95rem;">3-4 Weeks</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; color: #2c3e50;">3</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;">Development</h3>
+                    <p style="color: #666; font-size: 0.95rem;">4-6 Weeks</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+                    <div style="width: 60px; height: 60px; background: white; border: 3px solid var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; color: #2c3e50;">4</div>
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;">Testing & Launch</h3>
+                    <p style="color: #666; font-size: 0.95rem;">2-3 Weeks</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <p style="font-size: 1.2rem; color: #2c3e50; font-weight: 600;">
+                    <i class="fas fa-bolt" style="color: #f39c12; margin-right: 10px;"></i>
+                    Total Timeline: 8-12 Weeks
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Related Solutions -->
+    <section class="modern-section">
+        <div class="container">
+            <h2 class="section-title-modern">Related Solutions</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Complete your digital banking transformation with our integrated solutions
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <a href="core-banking.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-server" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Core Banking</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Backend banking system for transaction processing and account management.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <a href="payments.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-credit-card" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Payments System</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Payment processing and switching platform for multiple payment channels.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <a href="middleware.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--purple-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-exchange-alt" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Middleware</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Integration platform connecting banking systems with third-party services and APIs.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern CTA -->
+    <section class="modern-section animated-gradient">
+        <div class="container">
+            <div style="text-align: center; padding: 80px 20px;">
+                <h2 style="color: white; font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;">Launch Your Mobile Banking App</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">
+                    Get your custom-branded mobile banking app with cutting-edge features and enterprise-grade security.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn-gradient" style="background: white; color: #2ecc71;">
+                        <i class="fas fa-rocket"></i> <span>Get Started Now</span>
+                    </a>
+                    <a href="contact.html" class="btn-gradient" style="background: transparent; border: 2px solid white;">
+                        <i class="fas fa-file-pdf"></i> <span>Download Case Study</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Footer -->
+    <div id="footer-container"></div>
+    
+    <!-- Scripts -->
+    <script src="/cssfiles/Js/component.js"></script>
+    <script src="/cssfiles/Js/main.js"></script>
+    
+    <!-- Additional JavaScript for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate mobile features
+            document.querySelectorAll('.mobile-feature').forEach(feature => {
+                feature.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                feature.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate platform cards
+            document.querySelectorAll('.platform-modern').forEach(platform => {
+                platform.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.querySelector('i').style.transform = 'scale(1.1)';
+                });
+                
+                platform.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.querySelector('i').style.transform = 'scale(1)';
+                });
+            });
+            
+            // Animate security items
+            document.querySelectorAll('.security-item-modern').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate timeline circles
+            const timelineCircles = document.querySelectorAll('div[style*="border: 3px solid var(--secondary-gradient)"]');
+            timelineCircles.forEach(circle => {
+                circle.addEventListener('mouseenter', function() {
+                    this.style.background = 'var(--secondary-gradient)';
+                    this.style.color = 'white';
+                    this.style.transform = 'scale(1.1)';
+                });
+                
+                circle.addEventListener('mouseleave', function() {
+                    this.style.background = 'white';
+                    this.style.color = '#2c3e50';
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Animate sections on scroll
+            const sections = document.querySelectorAll('.modern-section');
+            sections.forEach(section => {
+                if (!section.classList.contains('animated-gradient')) {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(30px)';
+                    section.style.transition = 'all 0.6s ease';
+                    observer.observe(section);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

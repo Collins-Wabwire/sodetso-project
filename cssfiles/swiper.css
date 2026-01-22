@@ -1,0 +1,270 @@
+/* Swiper Styles */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Testimonial Slider */
+.testimonialSwiper {
+    padding: 20px 0 50px;
+}
+
+.testimonial-slide {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.testimonial-slide p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.testimonial-slide .client {
+    margin-top: auto;
+}
+
+.testimonial-slide .client strong {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-slide .client span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #0056b3;
+}
+
+/* Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    color: #0056b3;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: #0056b3;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Client Logos Slider */
+.clientLogosSwiper .swiper-slide {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    height: 100px;
+}
+
+.clientLogosSwiper .swiper-slide img {
+    max-width: 100%;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.clientLogosSwiper .swiper-slide-active img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Case Studies Slider */
+.caseStudiesSwiper .swiper-slide {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: left;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.caseStudiesSwiper .swiper-slide-active {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* Team Slider */
+.teamSwiper .swiper-slide {
+    background: transparent;
+    padding: 20px;
+}
+
+/* Responsive Swiper */
+@media (max-width: 768px) {
+    .testimonial-slide {
+        padding: 30px 20px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+    
+    .clientLogosSwiper .swiper-slide {
+        height: 80px;
+    }
+    
+    .caseStudiesSwiper .swiper-slide-active {
+        transform: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .testimonial-slide,
+    .caseStudiesSwiper .swiper-slide {
+        background: #1e1e1e;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        background: #2d2d2d;
+        color: #e0e0e0;
+    }
+    
+    .swiper-pagination-bullet {
+        background: #555;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: #0056b3;
+    }
+}
+
+/* Loading State */
+.swiper-lazy-preloader {
+    border-color: #0056b3;
+    border-top-color: transparent;
+}
+
+/* Accessibility */
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+.swiper-pagination-bullet:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+/* Auto Height */
+.swiper-autoheight .swiper-slide {
+    height: auto;
+}
+
+/* Fade Effect */
+.swiper-fade .swiper-slide {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.swiper-fade .swiper-slide-active {
+    opacity: 1;
+}
+
+.swiper-fade .swiper-slide-next,
+.swiper-fade .swiper-slide-prev {
+    opacity: 0.5;
+}
+
+/* 3D Effects */
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0));
+}
+
+/* Creative Swiper */
+.swiper-creative .swiper-slide {
+    overflow: hidden;
+}
+
+.swiper-creative .swiper-slide-active {
+    z-index: 1;
+}
+
+/* Parallax */
+.swiper-parallax {
+    overflow: hidden;
+}
+
+.swiper-parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Custom Scrollbar */
+.swiper-scrollbar {
+    background: rgba(0,0,0,0.1);
+}
+
+.swiper-scrollbar-drag {
+    background: #0056b3;
+}

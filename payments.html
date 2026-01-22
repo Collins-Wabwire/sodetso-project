@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments System | Sodetso Banking Technology</title>
+    <link rel="stylesheet" href="/cssfiles/style.css">
+    <link rel="stylesheet" href="/cssfiles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Modern Enhancements -->
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(45deg, #6a11cb, #2575fc);
+            --secondary-gradient: linear-gradient(45deg, #2ecc71, #1abc9c);
+            --accent-gradient: linear-gradient(45deg, #e74c3c, #e67e22);
+            --purple-gradient: linear-gradient(45deg, #9b59b6, #34495e);
+            --dark-bg: #2c3e50;
+            --light-bg: #f8f9fa;
+        }
+        
+        .animated-gradient {
+            background: linear-gradient(-45deg, #6a11cb, #2575fc, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .modern-section {
+            padding: 100px 0;
+        }
+        
+        .section-title-modern {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 0;
+        }
+        
+        .btn-gradient span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-gradient i {
+            margin-right: 8px;
+        }
+        
+        .modern-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .payment-channel-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .channel-modern {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .channel-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent-gradient);
+        }
+        
+        .channel-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .channel-modern:hover .channel-icon {
+            transform: scale(1.1);
+        }
+        
+        .channel-modern h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .channel-modern p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .modules-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .module-modern {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent-gradient);
+            transition: all 0.3s ease;
+        }
+        
+        .module-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .module-modern h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .integration-modern {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .integration-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .integration-modern i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #2575fc;
+        }
+        
+        .integration-modern span {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .solution-header-modern {
+            padding: 120px 0 80px;
+            background: var(--light-bg);
+        }
+        
+        @media (max-width: 768px) {
+            .payment-channel-modern,
+            .modules-grid-modern,
+            .integration-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Modern Solution Header -->
+    <section class="solution-header-modern">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div>
+                    <span style="color: #e74c3c; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 15px;">PAYMENTS SYSTEM</span>
+                    <h1 style="font-size: 3.5rem; color: #2c3e50; margin-bottom: 20px; font-weight: 800; line-height: 1.2;">Advanced Payment Processing Platform</h1>
+                    <p style="font-size: 1.2rem; color: #666; line-height: 1.7; margin-bottom: 30px;">
+                        Real-time payment processing and switching solution that handles multiple payment channels with enterprise-grade security and scalability.
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-gradient" style="background: var(--accent-gradient);">
+                            <i class="fas fa-calendar-check"></i> <span>Request Demo</span>
+                        </a>
+                        <a href="#features" class="btn-gradient" style="background: transparent; border: 2px solid #e74c3c; color: #e74c3c;">
+                            <i class="fas fa-list"></i> <span>View Features</span>
+                        </a>
+                    </div>
+                </div>
+                <div style="background: var(--accent-gradient); padding: 50px; border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center; color: white;">
+                        <i class="fas fa-credit-card" style="font-size: 100px; margin-bottom: 20px;"></i>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Payment Processing</h3>
+                        <p style="opacity: 0.9;">Secure, scalable, real-time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Payment Channels -->
+    <section class="modern-section" id="features">
+        <div class="container">
+            <h2 class="section-title-modern">Payment Channels</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Support for multiple payment methods to meet diverse customer needs and preferences
+            </p>
+            
+            <div class="payment-channel-modern">
+                <div class="channel-modern">
+                    <div class="channel-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Card Payments</h3>
+                    <p>Debit, credit, and prepaid card processing with EMV chip technology and contactless payments support.</p>
+                </div>
+                
+                <div class="channel-modern">
+                    <div class="channel-icon" style="background: var(--secondary-gradient);">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Money</h3>
+                    <p>Integration with mobile wallet providers for seamless mobile payments and transfers across networks.</p>
+                </div>
+                
+                <div class="channel-modern">
+                    <div class="channel-icon" style="background: var(--primary-gradient);">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Real-time Transfers</h3>
+                    <p>Instant bank transfers and peer-to-peer payments with real-time settlement and notification.</p>
+                </div>
+                
+                <div class="channel-modern">
+                    <div class="channel-icon" style="background: var(--purple-gradient);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>International Payments</h3>
+                    <p>Cross-border payments, remittances, and forex services with competitive exchange rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern System Components -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">System Components</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Comprehensive suite of components that make up our complete payment processing ecosystem
+            </p>
+            
+            <div class="modules-grid-modern">
+                <div class="module-modern">
+                    <h3><i class="fas fa-exchange-alt" style="color: #e74c3c; margin-right: 10px;"></i> Payment Switch</h3>
+                    <p>Real-time transaction routing, switching, and authorization with load balancing and failover support.</p>
+                </div>
+                
+                <div class="module-modern">
+                    <h3><i class="fas fa-id-card" style="color: #e74c3c; margin-right: 10px;"></i> Card Management</h3>
+                    <p>End-to-end card issuance, lifecycle management, PIN services, and cardholder management.</p>
+                </div>
+                
+                <div class="module-modern">
+                    <h3><i class="fas fa-cash-register" style="color: #e74c3c; margin-right: 10px;"></i> POS Management</h3>
+                    <p>Point of Sale terminal management, monitoring, and remote configuration capabilities.</p>
+                </div>
+                
+                <div class="module-modern">
+                    <h3><i class="fas fa-shield-alt" style="color: #e74c3c; margin-right: 10px;"></i> Fraud Detection</h3>
+                    <p>AI-powered fraud detection, prevention, and real-time monitoring with machine learning algorithms.</p>
+                </div>
+                
+                <div class="module-modern">
+                    <h3><i class="fas fa-chart-line" style="color: #e74c3c; margin-right: 10px;"></i> Settlement & Reconciliation</h3>
+                    <p>Automated settlement processing, reconciliation, and reporting with audit trails.</p>
+                </div>
+                
+                <div class="module-modern">
+                    <h3><i class="fas fa-cogs" style="color: #e74c3c; margin-right: 10px;"></i> Administration Console</h3>
+                    <p>Centralized administration, configuration, and monitoring dashboard with role-based access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Integration Section -->
+    <section class="modern-section">
+        <div class="container">
+            <h2 class="section-title-modern">Supported Integrations</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Seamlessly connect with leading payment networks, processors, and financial institutions
+            </p>
+            
+            <div class="integration-grid">
+                <div class="integration-modern">
+                    <i class="fab fa-cc-visa" style="color: #1a1f71;"></i>
+                    <span>Visa Network</span>
+                </div>
+                
+                <div class="integration-modern">
+                    <i class="fab fa-cc-mastercard" style="color: #eb001b;"></i>
+                    <span>Mastercard</span>
+                </div>
+                
+                <div class="integration-modern">
+                    <i class="fas fa-money-bill-wave" style="color: #2ecc71;"></i>
+                    <span>Mobile Money Providers</span>
+                </div>
+                
+                <div class="integration-modern">
+                    <i class="fas fa-university" style="color: #3498db;"></i>
+                    <span>Banking Systems</span>
+                </div>
+                
+                <div class="integration-modern">
+                    <i class="fas fa-qrcode" style="color: #9b59b6;"></i>
+                    <span>QR Payment Systems</span>
+                </div>
+                
+                <div class="integration-modern">
+                    <i class="fas fa-wifi" style="color: #f39c12;"></i>
+                    <span>Payment Gateways</span>
+                </div>
+                
+                <div class="integration-modern">
+                    <i class="fas fa-satellite-dish" style="color: #e74c3c;"></i>
+                    <span>Switching Networks</span>
+                </div>
+                
+                <div class="integration-modern">
+                    <i class="fas fa-microchip" style="color: #34495e;"></i>
+                    <span>ATM Networks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Features -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">Key Features</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Enterprise-grade features designed for reliability, security, and performance
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: white; padding: 30px; border-radius: 15px;">
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div style="width: 50px; height: 50px; background: var(--accent-gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-bolt" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: #2c3e50; margin-bottom: 10px;">Real-time Processing</h3>
+                            <p style="color: #666; line-height: 1.6;">Millisecond transaction processing with instant authorization and settlement.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 15px;">
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div style="width: 50px; height: 50px; background: var(--accent-gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-shield-alt" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: #2c3e50; margin-bottom: 10px;">Bank-Grade Security</h3>
+                            <p style="color: #666; line-height: 1.6;">PCI DSS compliance, end-to-end encryption, and advanced fraud prevention.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 15px;">
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div style="width: 50px; height: 50px; background: var(--accent-gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-expand-arrows-alt" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: #2c3e50; margin-bottom: 10px;">High Scalability</h3>
+                            <p style="color: #666; line-height: 1.6;">Handle millions of transactions daily with linear scalability and 99.99% uptime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Related Solutions -->
+    <section class="modern-section">
+        <div class="container">
+            <h2 class="section-title-modern">Related Solutions</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Complete your digital transformation with our integrated banking solutions
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <a href="core-banking.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-server" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Core Banking</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Complete banking platform for account management, loans, and transactions.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <a href="mobile-banking.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-mobile-alt" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Mobile Banking</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Native mobile apps with biometric authentication and payment features.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <a href="middleware.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--purple-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-exchange-alt" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Middleware</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Integration platform connecting banking systems with third-party services.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern CTA -->
+    <section class="modern-section animated-gradient">
+        <div class="container">
+            <div style="text-align: center; padding: 80px 20px;">
+                <h2 style="color: white; font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;">Upgrade Your Payment Infrastructure</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">
+                    Implement a modern, scalable payments system that grows with your business and meets today's digital demands.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn-gradient" style="background: white; color: #e74c3c;">
+                        <i class="fas fa-calendar-check"></i> <span>Request Consultation</span>
+                    </a>
+                    <a href="contact.html" class="btn-gradient" style="background: transparent; border: 2px solid white;">
+                        <i class="fas fa-file-pdf"></i> <span>Download Solution Brief</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Footer -->
+    <div id="footer-container"></div>
+    
+    <!-- Scripts -->
+    <script src="/cssfiles/Js/component.js"></script>
+    <script src="/cssfiles/Js/main.js"></script>
+    
+    <!-- Additional JavaScript for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate channel cards
+            document.querySelectorAll('.channel-modern').forEach(channel => {
+                channel.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                channel.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate integration cards
+            document.querySelectorAll('.integration-modern').forEach(integration => {
+                integration.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                    this.querySelector('i').style.transform = 'scale(1.2)';
+                });
+                
+                integration.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.querySelector('i').style.transform = 'scale(1)';
+                });
+            });
+            
+            // Animate modern cards
+            document.querySelectorAll('.modern-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Animate sections on scroll
+            const sections = document.querySelectorAll('.modern-section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.6s ease';
+                observer.observe(section);
+            });
+            
+            // Button hover effects
+            document.querySelectorAll('.btn-gradient').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

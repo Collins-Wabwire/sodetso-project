@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Banking | Sodetso Banking Technology</title>
+    <link rel="stylesheet" href="/cssfiles/style.css">
+    <link rel="stylesheet" href="/cssfiles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Modern Enhancements -->
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(45deg, #6a11cb, #2575fc);
+            --secondary-gradient: linear-gradient(45deg, #2ecc71, #1abc9c);
+            --accent-gradient: linear-gradient(45deg, #e74c3c, #e67e22);
+            --purple-gradient: linear-gradient(45deg, #9b59b6, #34495e);
+            --orange-gradient: linear-gradient(45deg, #f39c12, #e67e22);
+            --dark-bg: #2c3e50;
+            --light-bg: #f8f9fa;
+        }
+        
+        .animated-gradient {
+            background: linear-gradient(-45deg, #6a11cb, #2575fc, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .modern-section {
+            padding: 100px 0;
+        }
+        
+        .section-title-modern {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--orange-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 0;
+        }
+        
+        .btn-gradient span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-gradient i {
+            margin-right: 8px;
+        }
+        
+        .modern-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .agent-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .agent-service {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .agent-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--orange-gradient);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--orange-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .agent-service:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .agent-service h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .agent-service p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .management-item-modern {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .management-item-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--orange-gradient);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .management-item-modern:hover::before {
+            transform: translateX(0);
+        }
+        
+        .management-item-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .management-item-modern i {
+            font-size: 3rem;
+            color: #f39c12;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .management-item-modern:hover i {
+            transform: scale(1.1);
+        }
+        
+        .management-item-modern h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .benefits-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-modern {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .benefit-modern::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--orange-gradient);
+            border-radius: 0 0 15px 15px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-modern:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .benefit-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-modern h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .benefit-modern p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .solution-header-modern {
+            padding: 120px 0 80px;
+            background: var(--light-bg);
+        }
+        
+        @media (max-width: 768px) {
+            .agent-services-grid,
+            .management-grid,
+            .benefits-grid-modern {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Modern Solution Header -->
+    <section class="solution-header-modern">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div>
+                    <span style="color: #f39c12; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 15px;">AGENCY BANKING</span>
+                    <h1 style="font-size: 3.5rem; color: #2c3e50; margin-bottom: 20px; font-weight: 800; line-height: 1.2;">Agent Banking Platform</h1>
+                    <p style="font-size: 1.2rem; color: #666; line-height: 1.7; margin-bottom: 30px;">
+                        Expand banking services through secure, scalable agent networks. Bring financial services to underserved communities with our comprehensive agency banking solution.
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-gradient" style="background: var(--orange-gradient);">
+                            <i class="fas fa-calendar-check"></i> <span>Request Demo</span>
+                        </a>
+                        <a href="#features" class="btn-gradient" style="background: transparent; border: 2px solid #f39c12; color: #f39c12;">
+                            <i class="fas fa-info-circle"></i> <span>Learn More</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div style="background: var(--orange-gradient); padding: 50px; border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-store" style="font-size: 100px; margin-bottom: 20px;"></i>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Agent Network</h3>
+                            <p style="opacity: 0.9;">Secure, scalable, accessible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Agent Services -->
+    <section class="modern-section" id="features">
+        <div class="container">
+            <h2 class="section-title-modern">Agent Services</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Comprehensive range of banking services available through authorized agents
+            </p>
+            
+            <div class="agent-services-grid">
+                <div class="agent-service">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Cash Deposit</h3>
+                    <p>Customers can securely deposit cash through authorized agents with instant account crediting and receipt generation.</p>
+                </div>
+                
+                <div class="agent-service">
+                    <div class="service-icon" style="background: var(--secondary-gradient);">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>Cash Withdrawal</h3>
+                    <p>Withdraw cash from bank accounts via agents with real-time authorization and secure transaction processing.</p>
+                </div>
+                
+                <div class="agent-service">
+                    <div class="service-icon" style="background: var(--primary-gradient);">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Fund Transfers</h3>
+                    <p>Send money to other bank accounts, mobile wallets, and across agent networks with instant settlement.</p>
+                </div>
+                
+                <div class="agent-service">
+                    <div class="service-icon" style="background: var(--purple-gradient);">
+                        <i class="fas fa-bill"></i>
+                    </div>
+                    <h3>Bill Payments</h3>
+                    <p>Pay utility bills, school fees, taxes, and other payments through agents with instant confirmation.</p>
+                </div>
+                
+                <div class="agent-service">
+                    <div class="service-icon" style="background: linear-gradient(45deg, #3498db, #2980b9);">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Account Opening</h3>
+                    <p>Open new bank accounts through agents with digital KYC verification and instant account activation.</p>
+                </div>
+                
+                <div class="agent-service">
+                    <div class="service-icon" style="background: linear-gradient(45deg, #1abc9c, #16a085);">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>QR Payments</h3>
+                    <p>Accept and make payments using QR codes with secure transaction processing and instant settlement.</p>
+                </div>
+                
+                <div class="agent-service">
+                    <div class="service-icon" style="background: linear-gradient(45deg, #9b59b6, #8e44ad);">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Loan Services</h3>
+                    <p>Apply for loans, submit documents, and receive disbursements through authorized agent networks.</p>
+                </div>
+                
+                <div class="agent-service">
+                    <div class="service-icon" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Card Services</h3>
+                    <p>Debit/credit card requests, PIN changes, and card blocking services through agent outlets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Agent Management -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">Agent Management</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Complete suite of tools to manage your agent network effectively and efficiently
+            </p>
+            
+            <div class="management-grid">
+                <div class="management-item-modern">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Agent Onboarding</h3>
+                    <p>Digital agent registration, KYC verification, and training management with automated workflows.</p>
+                </div>
+                
+                <div class="management-item-modern">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Tracking</h3>
+                    <p>Real-time monitoring of agent transactions, volumes, and commission earnings with analytics dashboard.</p>
+                </div>
+                
+                <div class="management-item-modern">
+                    <i class="fas fa-money-bill"></i>
+                    <h3>Commission Management</h3>
+                    <p>Automated commission calculation, payout scheduling, and reconciliation with multiple commission models.</p>
+                </div>
+                
+                <div class="management-item-modern">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Risk Management</h3>
+                    <p>Agent risk scoring, transaction limits, fraud detection, and compliance monitoring with alerts.</p>
+                </div>
+                
+                <div class="management-item-modern">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Agent App</h3>
+                    <p>Mobile application for agents to process transactions, view reports, and manage their operations.</p>
+                </div>
+                
+                <div class="management-item-modern">
+                    <i class="fas fa-truck"></i>
+                    <h3>Cash Management</h3>
+                    <p>Cash float management, cash replenishment tracking, and cash position monitoring for agents.</p>
+                </div>
+                
+                <div class="management-item-modern">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Contract Management</h3>
+                    <p>Digital contract signing, renewal tracking, and document management for agent agreements.</p>
+                </div>
+                
+                <div class="management-item-modern">
+                    <i class="fas fa-headset"></i>
+                    <h3>Agent Support</h3>
+                    <p>24/7 support for agents including training, troubleshooting, and operational assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Business Benefits -->
+    <section class="modern-section">
+        <div class="container">
+            <h2 class="section-title-modern">Business Benefits</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Transform your banking operations and achieve significant business growth with agency banking
+            </p>
+            
+            <div class="benefits-grid-modern">
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-expand-arrows-alt" style="color: #f39c12; margin-right: 10px;"></i> Expand Reach</h3>
+                    <p>Serve unbanked and underbanked populations in rural and remote areas without physical branch infrastructure.</p>
+                </div>
+                
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-chart-line" style="color: #f39c12; margin-right: 10px;"></i> Reduce Operational Costs</h3>
+                    <p>Lower branch expansion costs, reduce overheads, and optimize resource allocation through agent networks.</p>
+                </div>
+                
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-money-bill-wave" style="color: #f39c12; margin-right: 10px;"></i> Increase Revenue</h3>
+                    <p>Generate additional fee income from agent transactions and expand customer base for cross-selling opportunities.</p>
+                </div>
+                
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-users" style="color: #f39c12; margin-right: 10px;"></i> Improve Financial Inclusion</h3>
+                    <p>Bring essential banking services to underserved communities, promoting economic growth and financial literacy.</p>
+                </div>
+                
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-bolt" style="color: #f39c12; margin-right: 10px;"></i> Faster Service Delivery</h3>
+                    <p>Provide instant banking services to customers without the need to travel long distances to bank branches.</p>
+                </div>
+                
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-shield-alt" style="color: #f39c12; margin-right: 10px;"></i> Enhanced Security</h3>
+                    <p>Secure transactions with biometric verification, real-time monitoring, and comprehensive audit trails.</p>
+                </div>
+                
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-chart-pie" style="color: #f39c12; margin-right: 10px;"></i> Better Data Insights</h3>
+                    <p>Gain valuable insights into customer behavior, transaction patterns, and market opportunities.</p>
+                </div>
+                
+                <div class="benefit-modern">
+                    <h3><i class="fas fa-handshake" style="color: #f39c12; margin-right: 10px;"></i> Stronger Customer Relationships</h3>
+                    <p>Build stronger relationships with customers through convenient, accessible, and personalized services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Model -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">Implementation Model</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Flexible deployment options to suit your business requirements and infrastructure
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-top: 5px solid var(--orange-gradient);">
+                    <div style="width: 80px; height: 80px; background: var(--orange-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-cloud" style="color: white; font-size: 32px;"></i>
+                    </div>
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">Cloud-Based</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">Fully hosted solution with monthly subscription. Quick deployment, automatic updates, and scalable infrastructure.</p>
+                    <div style="color: #f39c12; font-weight: 600; font-size: 1.1rem;">
+                        <i class="fas fa-clock"></i> Deployment: 2-4 Weeks
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-gradient);">
+                    <div style="width: 80px; height: 80px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-server" style="color: white; font-size: 32px;"></i>
+                    </div>
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">On-Premise</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">Full control over infrastructure and data. One-time license fee with annual maintenance and support.</p>
+                    <div style="color: #2575fc; font-weight: 600; font-size: 1.1rem;">
+                        <i class="fas fa-clock"></i> Deployment: 6-8 Weeks
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-top: 5px solid var(--secondary-gradient);">
+                    <div style="width: 80px; height: 80px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <i class="fas fa-random" style="color: white; font-size: 32px;"></i>
+                    </div>
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">Hybrid Model</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">Combination of cloud and on-premise components. Flexible architecture to meet specific regulatory requirements.</p>
+                    <div style="color: #2ecc71; font-weight: 600; font-size: 1.1rem;">
+                        <i class="fas fa-clock"></i> Deployment: 4-6 Weeks
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Related Solutions -->
+    <section class="modern-section">
+        <div class="container">
+            <h2 class="section-title-modern">Related Solutions</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Complete your banking ecosystem with our integrated solutions
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <a href="core-banking.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-server" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Core Banking</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Backend transaction processing system that powers all agency banking transactions.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <a href="mobile-banking.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-mobile-alt" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Mobile Banking</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Digital banking channels that complement agency banking services for customers.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                
+                <a href="middleware.html" class="modern-card" style="text-decoration: none; color: inherit;">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--purple-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-exchange-alt" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Middleware</h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">Integration platform connecting agency banking system with POS devices and third-party services.</p>
+                        <span style="color: #2575fc; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern CTA -->
+    <section class="modern-section animated-gradient">
+        <div class="container">
+            <div style="text-align: center; padding: 80px 20px;">
+                <h2 style="color: white; font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;">Launch Your Agency Banking Network</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">
+                    Expand your banking reach and bring financial services to underserved communities with our comprehensive agency banking solution.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn-gradient" style="background: white; color: #f39c12;">
+                        <i class="fas fa-rocket"></i> <span>Get Started</span>
+                    </a>
+                    <a href="contact.html" class="btn-gradient" style="background: transparent; border: 2px solid white;">
+                        <i class="fas fa-file-pdf"></i> <span>Download Brochure</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Footer -->
+    <div id="footer-container"></div>
+    
+    <!-- Scripts -->
+    <script src="/cssfiles/Js/component.js"></script>
+    <script src="/cssfiles/Js/main.js"></script>
+    
+    <!-- Additional JavaScript for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate agent services
+            document.querySelectorAll('.agent-service').forEach(service => {
+                service.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                service.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate management items
+            document.querySelectorAll('.management-item-modern').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate benefits
+            document.querySelectorAll('.benefit-modern').forEach(benefit => {
+                benefit.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                benefit.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate implementation cards
+            const implementationCards = document.querySelectorAll('div[style*="border-top: 5px solid"]');
+            implementationCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    const icon = this.querySelector('div[style*="background:"]');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1) rotate(5deg)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    const icon = this.querySelector('div[style*="background:"]');
+                    if (icon) {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+            
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Special animation for management items
+                        if (entry.target.classList.contains('management-item-modern')) {
+                            const topBar = entry.target.querySelector('::before');
+                            if (topBar) {
+                                setTimeout(() => {
+                                    topBar.style.transform = 'translateX(0)';
+                                }, 300);
+                            }
+                        }
+                        
+                        // Special animation for benefits
+                        if (entry.target.classList.contains('benefit-modern')) {
+                            const bottomBar = entry.target.querySelector('::after');
+                            if (bottomBar) {
+                                setTimeout(() => {
+                                    bottomBar.style.transform = 'scaleX(1)';
+                                }, 500);
+                            }
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Animate sections on scroll
+            const sections = document.querySelectorAll('.modern-section');
+            sections.forEach(section => {
+                if (!section.classList.contains('animated-gradient')) {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(30px)';
+                    section.style.transition = 'all 0.6s ease';
+                    observer.observe(section);
+                }
+            });
+            
+            // Button hover effects
+            document.querySelectorAll('.btn-gradient').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

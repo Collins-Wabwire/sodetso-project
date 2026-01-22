@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Sodetso - Banking Technology Solutions</title>
+    <link rel="stylesheet" href="/cssfiles/style.css">
+    <link rel="stylesheet" href="/cssfiles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Modern Enhancements -->
+    <style>
+        /* Additional Modern Styles for About Page */
+        :root {
+            --primary-gradient: linear-gradient(45deg, #6a11cb, #2575fc);
+            --secondary-gradient: linear-gradient(45deg, #2ecc71, #1abc9c);
+            --accent-gradient: linear-gradient(45deg, #e74c3c, #e67e22);
+            --purple-gradient: linear-gradient(45deg, #9b59b6, #34495e);
+            --dark-bg: #2c3e50;
+            --light-bg: #f8f9fa;
+        }
+        
+        .animated-gradient {
+            background: linear-gradient(-45deg, #6a11cb, #2575fc, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .tech-stack, .differentiators, .stats-section {
+            padding: 100px 0;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .tech-category {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tech-category h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-tag {
+            background: var(--light-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-tag:hover {
+            background: var(--primary-gradient);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .diff-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .diff-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #2575fc;
+        }
+        
+        .diff-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .diff-item h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .diff-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .modern-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .modern-stat {
+            text-align: center;
+        }
+        
+        .modern-stat h3 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .modern-stat p {
+            color: #666;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .modern-section {
+            padding: 100px 0;
+        }
+        
+        .section-title-modern {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .modern-about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        @media (max-width: 992px) {
+            .modern-about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Modern Page Header -->
+    <section class="page-header animated-gradient">
+        <div class="container">
+            <div style="text-align: center; padding: 100px 0;">
+                <h1 style="color: white; font-size: 3.5rem; margin-bottom: 20px;">About Sodetso</h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.3rem; max-width: 700px; margin: 0 auto;">
+                    Pioneering banking technology solutions for the digital age
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern About Content -->
+    <section class="modern-section">
+        <div class="container">
+            <div class="modern-about-grid">
+                <div class="about-text">
+                    <span class="section-label" style="color: #2575fc; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">WHO WE ARE</span>
+                    <h2 style="font-size: 2.5rem; margin: 15px 0 20px; color: #2c3e50;">Leading Banking Technology Innovator</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #666; margin-bottom: 30px;">
+                        Sodetso specializes in developing cutting-edge software solutions for the banking and financial sectors. With years of industry experience, we deliver robust, scalable, and secure technology platforms that empower financial institutions to thrive in the digital age.
+                    </p>
+                    
+                    <div style="background: var(--light-bg); padding: 30px; border-radius: 15px; margin: 40px 0;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-bullseye" style="color: white; font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h3 style="color: #2c3e50; margin-bottom: 5px;">Our Mission</h3>
+                                <p style="color: #666; margin: 0;">To revolutionize banking operations through innovative technology solutions that enhance efficiency, security, and customer experience while ensuring compliance with global banking standards.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 60px; height: 60px; background: var(--secondary-gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-eye" style="color: white; font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h3 style="color: #2c3e50; margin-bottom: 5px;">Our Vision</h3>
+                                <p style="color: #666; margin: 0;">To be the leading provider of banking technology solutions in emerging markets, enabling financial inclusion and digital transformation across the globe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div style="background: var(--primary-gradient); padding: 40px; border-radius: 20px; height: 500px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-users" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Expert Team</h3>
+                            <p style="opacity: 0.9;">Dedicated professionals delivering excellence in banking technology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Core Values -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">Our Core Values</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                The principles that guide our work and define our company culture
+            </p>
+            
+            <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div class="modern-card">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-lightbulb" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Innovation</h3>
+                        <p style="color: #666; line-height: 1.6;">Continuously evolving with emerging technologies to deliver cutting-edge solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="modern-card">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-shield-alt" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Reliability</h3>
+                        <p style="color: #666; line-height: 1.6;">Bank-grade security and 24/7 system availability you can trust.</p>
+                    </div>
+                </div>
+                
+                <div class="modern-card">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-handshake" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Partnership</h3>
+                        <p style="color: #666; line-height: 1.6;">Building long-term relationships with our clients based on trust and collaboration.</p>
+                    </div>
+                </div>
+                
+                <div class="modern-card">
+                    <div style="padding: 40px 30px; text-align: center;">
+                        <div style="width: 70px; height: 70px; background: var(--purple-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                            <i class="fas fa-award" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">Excellence</h3>
+                        <p style="color: #666; line-height: 1.6;">World-class software development standards and quality assurance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Technology Stack -->
+    <section class="tech-stack modern-section">
+        <div class="container">
+            <h2 class="section-title-modern">Our Technology Stack</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                We leverage cutting-edge technologies to build secure, scalable, and high-performance banking solutions
+            </p>
+            
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3><i class="fas fa-server" style="margin-right: 10px; color: #2575fc;"></i> Backend Development</h3>
+                    <div class="tech-items">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">.NET Core</span>
+                        <span class="tech-tag">Node.js</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-desktop" style="margin-right: 10px; color: #2ecc71;"></i> Frontend Development</h3>
+                    <div class="tech-items">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-mobile-alt" style="margin-right: 10px; color: #e74c3c;"></i> Mobile Development</h3>
+                    <div class="tech-items">
+                        <span class="tech-tag">iOS (Swift)</span>
+                        <span class="tech-tag">Android (Kotlin)</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">React Native</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-database" style="margin-right: 10px; color: #9b59b6;"></i> Database</h3>
+                    <div class="tech-items">
+                        <span class="tech-tag">Oracle</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-cloud" style="margin-right: 10px; color: #3498db;"></i> Cloud Platforms</h3>
+                    <div class="tech-items">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Google Cloud</span>
+                        <span class="tech-tag">IBM Cloud</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-lock" style="margin-right: 10px; color: #f39c12;"></i> Security</h3>
+                    <div class="tech-items">
+                        <span class="tech-tag">SSL/TLS</span>
+                        <span class="tech-tag">OAuth 2.0</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">PCI DSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Differentiators -->
+    <section class="differentiators modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title-modern">Why Choose Sodetso</h2>
+            <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem;">
+                Discover what makes us the preferred partner for banking technology solutions
+            </p>
+            
+            <div class="diff-grid">
+                <div class="diff-item">
+                    <div class="diff-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>10+ Years Experience</h3>
+                    <p>Over a decade of specialized experience in banking technology solutions.</p>
+                </div>
+                
+                <div class="diff-item">
+                    <div class="diff-icon" style="background: var(--secondary-gradient);">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Local Expertise</h3>
+                    <p>Deep understanding of regional banking regulations and market needs.</p>
+                </div>
+                
+                <div class="diff-item">
+                    <div class="diff-icon" style="background: var(--accent-gradient);">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Flexible Deployment</h3>
+                    <p>Cloud, on-premise, or hybrid deployment options to suit your needs.</p>
+                </div>
+                
+                <div class="diff-item">
+                    <div class="diff-icon" style="background: var(--purple-gradient);">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Scalable Solutions</h3>
+                    <p>Technology that grows with your business from startup to enterprise.</p>
+                </div>
+                
+                <div class="diff-item">
+                    <div class="diff-icon" style="background: linear-gradient(45deg, #3498db, #2c3e50);">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock technical assistance and maintenance services.</p>
+                </div>
+                
+                <div class="diff-item">
+                    <div class="diff-icon" style="background: linear-gradient(45deg, #1abc9c, #16a085);">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Customizable</h3>
+                    <p>Tailored solutions designed for your specific business requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Stats -->
+    <section class="stats-section modern-section animated-gradient">
+        <div class="container">
+            <div class="modern-stats">
+                <div class="modern-stat">
+                    <h3>50+</h3>
+                    <p style="color: white;">Financial Institutions Served</p>
+                </div>
+                <div class="modern-stat">
+                    <h3>15+</h3>
+                    <p style="color: white;">Countries</p>
+                </div>
+                <div class="modern-stat">
+                    <h3>5M+</h3>
+                    <p style="color: white;">End Users</p>
+                </div>
+                <div class="modern-stat">
+                    <h3>99.9%</h3>
+                    <p style="color: white;">System Uptime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern CTA -->
+    <section class="modern-section" style="background: var(--light-bg);">
+        <div class="container">
+            <div style="background: white; padding: 60px; border-radius: 20px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.08);">
+                <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">Ready to Transform Your Banking Services?</h2>
+                <p style="color: #666; max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.8;">
+                    Partner with Sodetso to leverage our expertise in banking technology solutions. Let's build the future of finance together.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn-gradient">
+                        <i class="fas fa-calendar-check"></i> <span>Schedule a Consultation</span>
+                    </a>
+                    <a href="solutions.html" class="btn-gradient" style="background: var(--secondary-gradient);">
+                        <i class="fas fa-bars"></i> <span>View Our Solutions</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modern Footer -->
+    <div id="footer-container"></div>
+    
+    <script src="/cssfiles/Js/component.js"></script>
+    <script src="/cssfiles/Js/main.js"></script>
+    
+    <!-- Additional JavaScript for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate tech tags on hover
+            document.querySelectorAll('.tech-tag').forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate diff items
+            document.querySelectorAll('.diff-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animate modern cards
+            document.querySelectorAll('.modern-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add scroll animation for tech categories
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe tech categories for scroll animation
+            document.querySelectorAll('.tech-category').forEach(category => {
+                category.style.opacity = '0';
+                category.style.transform = 'translateY(20px)';
+                category.style.transition = 'all 0.5s ease';
+                observer.observe(category);
+            });
+        });
+    </script>
+</body>
+</html>
