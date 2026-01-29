@@ -2027,10 +2027,7 @@ nav ul li a {
 }
 
 /* TEMPORARY: Make navbar visible for debugging */
-.tech-header {
-    background: rgba(0, 86, 179, 0.9) !important;
-    border: 3px solid red !important;
-}
+
 
 .tech-nav-link {
     color: white !important;
