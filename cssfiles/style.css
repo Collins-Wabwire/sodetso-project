@@ -652,7 +652,7 @@ p {
 /* ===== Client Logos Carousel ===== */
 .client-logos-section {
     padding: 80px 0;
-    background: var(--light-bg);
+
     
 }
 
@@ -667,7 +667,7 @@ p {
 }
 
 .logoSwiper {
-    padding: 20px 0;
+    padding: 50px 0;
 }
 
 .logo-slide {
@@ -675,10 +675,7 @@ p {
     align-items: center;
     justify-content: center;
     height: 120px;
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    width: fit-content;
     transition: all 0.3s ease;
 }
 
@@ -689,11 +686,11 @@ p {
 
 .logo-slide img {
     max-width: 100%;
-    max-height: 70px;
+    max-height: 100px;
     width: auto;
     height: auto;
     filter: grayscale(0%);
-    opacity: 1;
+    opacity: 50;
     transition: all 0.3s ease;
 }
 
@@ -2027,8 +2024,7 @@ nav ul li a {
 }
 
 /* TEMPORARY: Make navbar visible for debugging */
-
-
+.tech-header {
 .tech-nav-link {
     color: white !important;
     font-weight: bold !important;
