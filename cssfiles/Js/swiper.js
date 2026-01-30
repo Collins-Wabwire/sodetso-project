@@ -1,7 +1,7 @@
 // swiper.js - Updated for Technobrain Style Sliders
 
 document.addEventListener('DOMContentLoaded', function() {
-      ensureEnoughSlidesForLoop();
+      
     // Hero Slider
     const heroSwiper = new Swiper('.heroSwiper', {
         direction: 'horizontal',
