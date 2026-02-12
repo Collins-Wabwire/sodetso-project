@@ -1095,7 +1095,7 @@ p {
     text-align: center;
     position: relative;
     overflow: hidden;
-    font-size: 26px;
+
 }
 
 .cta-content {
@@ -1107,7 +1107,7 @@ p {
 
 .cta-content h2 {
     color: rgb(247, 246, 246);
-    font-size: 20rem;
+    font-size: 5rem;
     font-weight: 800;
     margin-bottom: 25px;
     line-height: 1.3;
